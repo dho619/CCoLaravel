@@ -13,6 +13,4 @@ RUN apt-get install -y vim
 
 WORKDIR /home/app/blog
 ENTRYPOINT {"php", "artisan", "serve", "--host", "0.0.0.0"}
-
-ENTRYPOINT [ "tail", "-f", "/dev/null" ]
 #Comando que fará a inicialização do container. Seja programa, script ou comando
