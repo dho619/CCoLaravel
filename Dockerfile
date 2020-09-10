@@ -9,7 +9,7 @@ RUN apt-get install -y build-essential apt-utils php7.4 php7.4-dev \\
 php7.4-cgi php7.4-cli php7.4-common php-bcmath php-fpm php7.4-xml phpdox php7.4-mbstring \\
 php7.4-json php7.4-zip php7.4-pgsql php7.4-mbstring unzip composer 
 RUN composer global require laravel/installer
-RUN apt-get install vim
+RUN apt-get install -y vim
 
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
 #Comando que fará a inicialização do container. Seja programa, script ou comando
