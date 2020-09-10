@@ -11,5 +11,8 @@ php7.4-json php7.4-zip php7.4-pgsql php7.4-mbstring unzip composer
 RUN composer global require laravel/installer
 RUN apt-get install -y vim
 
+WORKDIR /home/app/blog
+ENTRYPOINT {"php", "artisan", "serve", "--host", "0.0.0.0"}
+
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
 #Comando que fará a inicialização do container. Seja programa, script ou comando
