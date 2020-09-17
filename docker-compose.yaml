@@ -1,7 +1,12 @@
 version: "3"
 
 services:
-  
+  system-laravel: 
+    image: dho619/laravel-container:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - local
 
   system-bd: 
     image: postgres:9.6
@@ -14,7 +19,6 @@ services:
       POSTGRES_PASSWORD: laravel_password
       POSTGRES_DB: laravel_db
       PGDATA: /var/lib/postgresql/data/pgdata
-
     networks:
       - local
 
