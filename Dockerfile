@@ -12,4 +12,5 @@ RUN composer global require laravel/installer && composer -vvv create-project --
 RUN apt-get -y install nano vim
 
 WORKDIR /home/app/blog
+RUN php artisan serve --host 0.0.0.0
 ENTRYPOINT ["php","artisan","serve","--host","0.0.0.0"]
