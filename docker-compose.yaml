@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - 127.0.0.0
+      - localhost
 
   system-bd: 
     image: postgres:9.6
