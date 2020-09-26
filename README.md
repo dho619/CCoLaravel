@@ -2,8 +2,6 @@
 
 ## Projeto desenvolvido pelo UNIFEG no curso de CCO - Oitavo Período  
 
-TODO
-
 ## Dados gerais  
 
 ### Serviços e Portas
