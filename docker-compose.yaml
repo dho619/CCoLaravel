@@ -1,19 +1,30 @@
 version: "3"
 
 services:
+  #subindo um serviço que nese caso é o container do laravel
+  #que se encontra dockerhub
   system-laravel: 
+    #definir a imagem
     image: dho619/laravel-container:latest
+    #mapear as portas
     ports:
       - "8000:8000"
+    # onde irá executar
     networks:
       - local
 
   system-bd: 
+    #definindo a imagem do postgres
     image: postgres:9.6
+    #mapeando o local físico e o do container que contém os arquivos
+    #que nesse caso é do banco postgres
     volumes:
       - "./postgres-container/pgdata:/var/lib/postgresql/data/pgdata"
+    #mapeando portas
     ports: 
       - "54321:5432"
+    #passando as variáveis que serão utilizadas
+    #nesse caso é o usuario, senha, banco e local do banco
     environment:
       POSTGRES_USER: laravel_user
       POSTGRES_PASSWORD: laravel_password
