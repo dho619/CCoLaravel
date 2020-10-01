@@ -2,8 +2,6 @@
 
 ## Projeto desenvolvido pelo UNIFEG no curso de CCO - Oitavo Período  
 
-TODO
-
 ## Dados gerais  
 
 ### Serviços e Portas
@@ -27,7 +25,13 @@ Todos os serviços e portas, acessíveis via localhost:<porta>
 
 ### Comandos Docker
 
-`docker push menossi/laravel-container:latest` <-> puxa a imagem de container utilizada em aula.  
+`docker push dho619/laravel-container:latest` = Caso queira baixar o container
+
+`docker run -d -it -p 8000:8000 dho619/laravel-container:latest` = Rodar diretamente o container, mapeando a porta
+
+`docker-compose up` = Para subir os containers usando o docker-compose (arquivo encontra no repositório do github abaixo)
+
+**https://github.com/dho619/CCoLaravel**
 
 ### Pacotes instalados em container laravel-container
 
