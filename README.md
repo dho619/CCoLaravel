@@ -1,17 +1,17 @@
-# CCO-Laravel
+# CCOLaravel
 
-## Projeto desenvolvido pelo UNIFEG no curso de CCO - Oitavo Período  
+## Projeto desenvolvido em aula, no curso de Ciência da computação - 8º Período, na matéria de Novos Paradigmas De Computação
 
 ## Dados gerais  
 
 ### Serviços e Portas
 
-| Serviço | Porta |
-|---------|-------|
-|php      |8000   |
-|postgre | 54321 |  
+| Serviço | Porta Container | Porta Local |
+|---------|-----------------|-------------|
+|php      |             8000|         8000|
+|postgres |             5432|        54321|
 
-Todos os serviços e portas, acessíveis via localhost:<porta>  
+Pode acessar os serviços do container através de localhost:<porta>  
 
 ### Dados de acesso ao banco
 
@@ -19,21 +19,39 @@ Todos os serviços e portas, acessíveis via localhost:<porta>
 **POSTGRES_PASSWORD:** laravel_password   
 **POSTGRES_DB:** laravel_db  
 
-### Diretório de trabalho
+### Diretório de trabalho dentro do container laravel
 
 /home/app
 
-### Comandos Docker
+## Formas de rodar:
 
-`docker push dho619/laravel-container:latest` = Caso queira baixar o container
+### Através do dockerfile
 
-`docker run -d -it -p 8000:8000 dho619/laravel-container:latest` = Rodar diretamente o container, mapeando a porta
+Baixa esse repositório ou pelo menos o dockerfile(laravel-container/Dockerfile)
+Para fazer o build do container:
 
-`docker-compose up` = Para subir os containers usando o docker-compose (arquivo encontra no repositório do github abaixo)
+    `docker build -t nomeContainer:versao caminhoDockerFile`
 
-**https://github.com/dho619/CCoLaravel**
+e depois para executá-lo mapeando a porta que o laravel usa: 
 
-### Pacotes instalados em container laravel-container
+    `docker run -d -it -p 8000:8000 dho619/laravel-container:latest`
+
+### Através do dockerhub
+
+Trazer o container do dockerhub:
+
+    `docker pull dho619/laravel-container:latest`
+
+e depois para executá-lo mapeando a porta que o laravel usa:
+
+    `docker run -d -it -p 8000:8000 dho619/laravel-container:latest` 
+
+### Rodar o docker-compose
+
+`docker-compose up` = Vai subir os containers de acordo com o descrito no arquivo docker-compose. No arquivo em questão, está para subir o container laravel e um container com postgres. **Deve estar no diretório que contém o arquivo**
+
+
+### Pacotes instalados no container laravel
 
 - build-essential  
 - php7.4  
