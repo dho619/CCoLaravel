@@ -1,4 +1,5 @@
 # Primeiro passo é definir a distribuição base da imagem
+#nesse caso é ubuntu 20.04
 FROM ubuntu:20.04
 # as imagens do container segue a sintaxe: <nomedaimagem>:<TAG>
 
